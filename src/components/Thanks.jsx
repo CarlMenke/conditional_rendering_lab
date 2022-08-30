@@ -1,6 +1,8 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 
-export default function Thanks() {
+export default function Thanks(props) {
+  const { name, email, age, handleChange, incrementPage, decrementPage, setFormValues } = props
+
   return (
     <div>
       <br></br>
@@ -10,7 +12,7 @@ export default function Thanks() {
       />
       <br></br>
       <br></br>
-      <button>Back</button>
+      <button onClick = {props.decrementPage}>Back</button>
     </div>
   )
 }

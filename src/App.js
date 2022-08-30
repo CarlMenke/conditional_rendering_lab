@@ -1,5 +1,5 @@
 import './styles/App.css'
-import React, { useState } from 'react'
+import React, { useState , useEffect} from 'react'
 import Form from './components/Form'
 
 function App() {
@@ -12,7 +12,10 @@ function App() {
   }
 
   const incrementPage = () => {
-    setCurrentPage((prevState) => prevState + 1)
+    setCurrentPage(currentPage + 1)
+  }
+  const decrementPage = () => {
+    setCurrentPage(currentPage - 1)
   }
 
   return (
@@ -24,6 +27,9 @@ function App() {
         email={formValues.email}
         incrementPage={incrementPage}
         handleChange={handleChange}
+        decrementPage = {decrementPage}
+        setCurrentPage = {setCurrentPage}
+        setFormValues = {setFormValues}
       />
     </div>
   )

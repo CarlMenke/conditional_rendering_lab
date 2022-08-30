@@ -1,7 +1,12 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 
 export default function Info(props) {
-  const { name, email, age, handleChange, incrementPage } = props
+  const { name, email, age, handleChange, incrementPage, decrementPage, setFormValues } = props
+
+  useEffect(()=>{
+    return(setFormValues({name: '' , age: '', email: ''}))
+  },[])
+
 
   return (
     <div className="info">
@@ -37,8 +42,8 @@ export default function Info(props) {
       </form>
       <br></br>
       <div>
-        <button>Back</button>
-        <button onClick={incrementPage}>Next</button>
+        <button onClick = {props.decrementPage}>Back</button>
+        <button onClick = {props.incrementPage}>Next</button>
       </div>
     </div>
   )
