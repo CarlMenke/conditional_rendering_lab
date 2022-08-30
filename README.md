@@ -1,70 +1,41 @@
-# Getting Started with Create React App
+# Conditional Rendering Lab
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![Bale](https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmedia.giphy.com%2Fmedia%2FcQhWrl1CrGD04%2Fgiphy.gif&f=1&nofb=1)
 
-## Available Scripts
+## Overview
 
-In the project directory, you can run:
+In this lab, we'll be working with a provided sign-up form to conditionally render components based on the user's input.
 
-### `npm start`
+## Getting Started
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- `Fork` and `Clone`
+- `cd` into `u2_lab_conditional_rendering`
+- `npm i`
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Instructions
 
-### `npm test`
+Using the provided components, create an environment where:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- The `Next` button is not clickable unless all 3 fields have user input
+- The `Thanks` component renders when a user over the age of 18 signs up
+- The `ErrorPage` component renders when a user under the age of 18 tries to sign up
 
-### `npm run build`
+## Notes/Tips
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Take a look at what is already provided in the app. Using the state we have, how could we decide which components to render under certain conditions?
+- Consider the many conditional statements we've used throughout this course (if/else, switch, ternary). Which would be best for this situation?
+- The app **_will not_** render any components until you've called them in the `Form.jsx` render statement...
+- The **_majority_** of your work will be done in `Form.jsx`.
+- Make sure to pass in a `name` and `value` attribute to your inputs like so:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```jsx
+<input name="someKeyInFormState" value={props.someValueFromFormState} />
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Bonus
 
-### `npm run eject`
+- Configure the `Back` buttons to reset the state and return to the welcome page. Maybe a helper method in the `App` component could be useful?
+- Style it up! Remember to import your CSS file!
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Resources
+- [Disabled](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/disabled)
